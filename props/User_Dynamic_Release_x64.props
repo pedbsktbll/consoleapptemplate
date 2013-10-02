@@ -4,4 +4,13 @@
     <Import Project="internal\User_x64.props" />
     <Import Project="internal\Release.props" />
   </ImportGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>msvcrt_win2003.obj;msvcrt.lib;ntdll.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(DDKBASE-6001_18001)\lib\crt\amd64;$(DDKBASE-6001_18001)\lib\wnet\amd64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <MinimumRequiredVersion>5.2</MinimumRequiredVersion>
+    </Link>
+  </ItemDefinitionGroup>
 </Project>

@@ -4,4 +4,13 @@
     <Import Project="internal\User_x86.props" />
     <Import Project="internal\Release.props" />
   </ImportGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>msvcrt_win2000.obj;msvcrt.lib;ntdll.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(DDKBASE-6001_18001)\lib\crt\i386;$(DDKBASE-6001_18001)\lib\w2k\i386;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <MinimumRequiredVersion>5.0</MinimumRequiredVersion>
+    </Link>
+  </ItemDefinitionGroup>
 </Project>

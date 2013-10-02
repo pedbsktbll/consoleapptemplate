@@ -4,4 +4,9 @@
     <Import Project="internal\User_x64.props" />
     <Import Project="internal\Debug.props" />
   </ImportGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+    </ClCompile>
+  </ItemDefinitionGroup>
 </Project>
