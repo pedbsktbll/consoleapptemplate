@@ -23,13 +23,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="stdafx.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Resource.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="GUIAppTemplate.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="MainDlg.h">
@@ -37,9 +31,6 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="stdafx.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="GUIAppTemplate.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>

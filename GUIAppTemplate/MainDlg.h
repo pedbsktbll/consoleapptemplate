@@ -3,6 +3,14 @@
 /////////////////////////////////////////////////////////////////////////////
 
 #pragma once
+#define _CRT_NON_CONFORMING_SWPRINTFS
+#define _CRT_SECURE_NO_WARNINGS
+#include <atlbase.h>
+#include <atlapp.h>
+#include <atlframe.h>
+#include <atlctrls.h>
+#include <atldlgs.h>
+#include "resource.h"
 
 class CMainDlg : public CDialogImpl<CMainDlg>, public CUpdateUI<CMainDlg>, public CMessageFilter, public CIdleHandler
 {

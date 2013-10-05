@@ -1,9 +1,5 @@
 // WTL_Sample.cpp : main source file for WTL_Sample.exe
 //
-
-#include "stdafx.h"
-
-#include "resource.h"
 #include "MainDlg.h"
 
 CAppModule _Module;

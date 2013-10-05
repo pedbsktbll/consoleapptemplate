@@ -5,3 +5,4 @@ BIN
 /*.sdf
 /*.opensdf
 /GUIAppTemplate/Release
+/GUIAppTemplate/Debug
