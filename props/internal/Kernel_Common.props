@@ -3,10 +3,15 @@
   <ImportGroup Label="PropertySheets">
     <Import Project="Common.props" />
   </ImportGroup>
+  <PropertyGroup>
+    <TargetExt>.sys</TargetExt>
+    <GenerateManifest>false</GenerateManifest>
+  </PropertyGroup>
   <ItemDefinitionGroup>
     <ClCompile>
       <AdditionalIncludeDirectories>.\includes;.\pubinc;$(DDKBASE-6001_18001)\inc\api;$(DDKBASE-6001_18001)\inc\crt;$(DDKBASE-6001_18001)\inc\ddk;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_KERNEL;KERNEL;WINNT=1;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <CompileAs>CompileAsC</CompileAs>
     </ClCompile>
     <Link>
       <AdditionalOptions>/SECTION:INIT,D /IGNORE:4039 /safeseh:no %(AdditionalOptions)</AdditionalOptions>
