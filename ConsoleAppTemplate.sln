@@ -9,6 +9,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GUIAppTemplate", "GUIAppTem
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LIBAppTemplate", "LIBAppTemplate\LIBAppTemplate.vcxproj", "{8D9DA1D5-0A8A-472D-9443-9EB05FDEEE10}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SYSAppTemplate", "SYSAppTemplate\SYSAppTemplate.vcxproj", "{BE731125-5F57-42F2-B8B4-42A0C78EBBA7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug_Dynamic|Win32 = Debug_Dynamic|Win32
@@ -85,6 +87,22 @@ Global
 		{8D9DA1D5-0A8A-472D-9443-9EB05FDEEE10}.Release_Static|Win32.Build.0 = Release_Static|Win32
 		{8D9DA1D5-0A8A-472D-9443-9EB05FDEEE10}.Release_Static|x64.ActiveCfg = Release_Static|x64
 		{8D9DA1D5-0A8A-472D-9443-9EB05FDEEE10}.Release_Static|x64.Build.0 = Release_Static|x64
+		{BE731125-5F57-42F2-B8B4-42A0C78EBBA7}.Debug_Dynamic|Win32.ActiveCfg = Debug_Dynamic|Win32
+		{BE731125-5F57-42F2-B8B4-42A0C78EBBA7}.Debug_Dynamic|Win32.Build.0 = Debug_Dynamic|Win32
+		{BE731125-5F57-42F2-B8B4-42A0C78EBBA7}.Debug_Dynamic|x64.ActiveCfg = Debug_Dynamic|x64
+		{BE731125-5F57-42F2-B8B4-42A0C78EBBA7}.Debug_Dynamic|x64.Build.0 = Debug_Dynamic|x64
+		{BE731125-5F57-42F2-B8B4-42A0C78EBBA7}.Debug_Static|Win32.ActiveCfg = Debug_Static|Win32
+		{BE731125-5F57-42F2-B8B4-42A0C78EBBA7}.Debug_Static|Win32.Build.0 = Debug_Static|Win32
+		{BE731125-5F57-42F2-B8B4-42A0C78EBBA7}.Debug_Static|x64.ActiveCfg = Debug_Static|x64
+		{BE731125-5F57-42F2-B8B4-42A0C78EBBA7}.Debug_Static|x64.Build.0 = Debug_Static|x64
+		{BE731125-5F57-42F2-B8B4-42A0C78EBBA7}.Release_Dynamic|Win32.ActiveCfg = Release_Dynamic|Win32
+		{BE731125-5F57-42F2-B8B4-42A0C78EBBA7}.Release_Dynamic|Win32.Build.0 = Release_Dynamic|Win32
+		{BE731125-5F57-42F2-B8B4-42A0C78EBBA7}.Release_Dynamic|x64.ActiveCfg = Release_Dynamic|x64
+		{BE731125-5F57-42F2-B8B4-42A0C78EBBA7}.Release_Dynamic|x64.Build.0 = Release_Dynamic|x64
+		{BE731125-5F57-42F2-B8B4-42A0C78EBBA7}.Release_Static|Win32.ActiveCfg = Release_Static|Win32
+		{BE731125-5F57-42F2-B8B4-42A0C78EBBA7}.Release_Static|Win32.Build.0 = Release_Static|Win32
+		{BE731125-5F57-42F2-B8B4-42A0C78EBBA7}.Release_Static|x64.ActiveCfg = Release_Static|x64
+		{BE731125-5F57-42F2-B8B4-42A0C78EBBA7}.Release_Static|x64.Build.0 = Release_Static|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
