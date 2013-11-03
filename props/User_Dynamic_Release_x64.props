@@ -8,8 +8,8 @@
     <ClCompile>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>msvcrt_win2003.obj;msvcrt.lib;ntdll.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(DDKBASE-6001_18001)\lib\crt\amd64;$(DDKBASE-6001_18001)\lib\wnet\amd64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(Libs)\Dynamic_Libs\amd64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>msvcrt_win2003.obj;msvcrt.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <MinimumRequiredVersion>5.2</MinimumRequiredVersion>
     </Link>
   </ItemDefinitionGroup>
