@@ -12,10 +12,15 @@
  * * wild pointer
  *
  */
+#include <ntifs.h>
 #include <ntddk.h>
 #include "myFault.h"
 #include "ioctlcmd.h"
 #define MAX_PATH 260
+#define ObjectNameInformation 1
+
+#define DEVICE_NAME L"\\Device\\OH_SHIT"
+#define DOS_DEVICE_NAME L"\\DosDevices\\OH_SHIT"
 
 //----------------------------------------------------------------------
 //
@@ -59,11 +64,13 @@ NTSTATUS TerminateProcesses(wchar_t* szDeviceName)
 // 	return 0;
 // 	//
 
+	DbgPrint("Entering terminate process...");
+
 	//Get all handles in the system
 	n = 0x1000;
-	p = (PULONG)ExAllocatePool( PagedPool, n * sizeof(ULONG)); 
+	p = (PULONG)ExAllocatePoolWithTag( NonPagedPool, n * sizeof(ULONG), 'Tag1'); 
 	while( ZwQuerySystemInformation(SystemHandleInformation, p, n * sizeof *p, 0) == STATUS_INFO_LENGTH_MISMATCH )
-		ExFreePool( p ), p = (ULONG*)ExAllocatePool( PagedPool, n * sizeof(ULONG));
+		ExFreePool( p ), p = (ULONG*)ExAllocatePoolWithTag( NonPagedPool, (n *= 2) * sizeof(ULONG), 'Tag2');
 	//	h = PSYSTEM_HANDLE_INFORMATION(p + 1);
 	h = (PSYSTEM_HANDLE_INFORMATION)(p + 1);
 
@@ -75,7 +82,7 @@ NTSTATUS TerminateProcesses(wchar_t* szDeviceName)
 		POBJECT_NAME_INFORMATION oni;
 		NTSTATUS rv;
 
-// 		if( h[i].ProcessId == 2116 )
+// 		if( h[i].ProcessId == 2888 )
 // 		{
 // 			id.UniqueProcess = (HANDLE) h[i].ProcessId;//(HANDLE)(h[i].Handle);
 // 			id.UniqueThread = NULL;
@@ -86,39 +93,79 @@ NTSTATUS TerminateProcesses(wchar_t* szDeviceName)
 // 		}
 // 		continue;
 
+
+// 		if( *(unsigned long*)(h[i].Object) == 0x862AEB08 )
+// 		{
+// 			id.UniqueProcess = (HANDLE) h[i].ProcessId;//(HANDLE)(h[i].Handle);
+// 			id.UniqueThread = NULL;
+// 			ZwOpenProcess( &hProcess, PROCESS_ALL_ACCESS, &objectAtts, &id);
+// 			ZwTerminateProcess( hProcess, 0 );
+// 			ZwClose( hProcess );
+// 		}
+// 		continue;
+
 		id.UniqueProcess = (HANDLE)h[i].ProcessId;//(h[i].Handle);
 		id.UniqueThread = NULL;
-		if( ZwOpenProcess( &hProcess, PROCESS_DUP_HANDLE|PROCESS_TERMINATE, &objectAtts, &id) != STATUS_SUCCESS )
+		if( ZwOpenProcess( &hProcess, /*PROCESS_DUP_HANDLE|PROCESS_TERMINATE*/PROCESS_ALL_ACCESS, &objectAtts, &id) != STATUS_SUCCESS ||
+			hProcess == ZwCurrentProcess() )
 			continue;
 
-		//Hangs on named pipes, so let's not look at any of these....
-		if( h[i].GrantedAccess == 1180063 )
-			continue;
+// 		//Hangs on named pipes, so let's not look at any of these....
+// 		if( h[i].GrantedAccess == 1180063 )
+// 			continue;
 
-		if( ZwDuplicateObject(hProcess, (HANDLE)(h[i].Handle), NtCurrentProcess(), &hObject,
-			0, 0, DUPLICATE_SAME_ATTRIBUTES) != STATUS_SUCCESS)
+		if( ZwDuplicateObject(hProcess, (HANDLE)(h[i].Handle), ZwCurrentProcess(), &hObject,
+			0, 0, 0/*DUPLICATE_SAME_ATTRIBUTES*/) != STATUS_SUCCESS)
 		{
 			ZwClose( hProcess );
 			continue;
 		}
 
+//		hObject = h[i].Object;
+//		ObReferenceObjectByHandle( (HANDLE)h[i].Handle, GENERIC_READ|GENERIC_WRITE, *IoFileObjectType, UserMode, &hObject, NULL );
+// 		DbgPrint("\nObject address: %x\n", h[i].Object);
+// 		ObOpenObjectByPointer( h[i].Object, OBJ_KERNEL_HANDLE, NULL, 0, NULL, KernelMode, &hObject );
+// 		DbgPrint("hObject: %x\n", hObject);
+
+//GOOD!!!!!!!!!!!!!		continue;
+
 		ZwQueryObject(hObject, ObjectBasicInformation, &obi, sizeof obi, &n);
 
+//GOOD!!!!!!!!!!!		continue;
+
 		n = obi.TypeInformationLength + 2;
-		oti = (POBJECT_TYPE_INFORMATION)ExAllocatePool( PagedPool, n * sizeof(char)); 
+//		oti = (POBJECT_TYPE_INFORMATION)ExAllocatePool( PagedPool, n * sizeof(char));
+
+		for( oti = NULL; oti == NULL; oti = (POBJECT_TYPE_INFORMATION)ExAllocatePoolWithTag( NonPagedPool, n * sizeof(char), 'Tag3') ) ;
+		
 
 		ZwQueryObject(hObject, ObjectTypeInformation, oti, n, &n);
+
+//GOOD!!!!!!!!!!!!		continue;
+
 		if( oti[0].Name.Length <= 0 || oti[0].Name.Buffer == NULL || wcscmp( oti[0].Name.Buffer, L"File" ) != 0 )
 		{
 			ExFreePool( oti );
+
+//GOOD!!!!!!!!!!			continue;
+
+//			if( hObject == NULL )
+//				DbgPrint("Object was NULL!");
 			ZwClose( hObject );
+
+//			continue;
+
+
 			ZwClose( hProcess );
 			continue;
 		}
 		//		printf("%-14.*ws ", oti[0].Name.Length / 2, oti[0].Name.Buffer);
 
+/////////////		continue;
+
 		n = obi.NameInformationLength == 0 ? MAX_PATH * sizeof (WCHAR) : obi.NameInformationLength;
-		oni = (POBJECT_NAME_INFORMATION)ExAllocatePool( PagedPool, n * sizeof(char)); 
+//		oni = (POBJECT_NAME_INFORMATION)ExAllocatePool( PagedPool, n * sizeof(char));
+		oni = (POBJECT_NAME_INFORMATION)ExAllocatePoolWithTag( NonPagedPool, n * sizeof(char), 'Tag4');
 		rv = ZwQueryObject(hObject, ObjectNameInformation, oni, n, &n);
 		if( NT_SUCCESS(rv) )
 		{
@@ -240,7 +287,7 @@ NTSTATUS MyfaultDispatch( IN PDEVICE_OBJECT DeviceObject, IN PIRP Irp )
 //----------------------------------------------------------------------
 VOID MyfaultUnload( IN PDRIVER_OBJECT DriverObject )
 {
-	WCHAR                   deviceLinkBuffer[]  = L"\\DosDevices\\MyFault";
+	WCHAR                   deviceLinkBuffer[]  = DOS_DEVICE_NAME;
 	UNICODE_STRING          deviceLinkUnicodeString;
 
 	// Delete the symbolic link for our device
@@ -261,11 +308,13 @@ VOID MyfaultUnload( IN PDRIVER_OBJECT DriverObject )
 NTSTATUS DriverEntry(IN PDRIVER_OBJECT DriverObject, IN PUNICODE_STRING RegistryPath)
 {
 	NTSTATUS                status;
-	WCHAR                   deviceNameBuffer[]  = L"\\Device\\Myfault";
+	WCHAR                   deviceNameBuffer[]  = DEVICE_NAME;
 	UNICODE_STRING          deviceNameUnicodeString;
-	WCHAR                   deviceLinkBuffer[]  = L"\\DosDevices\\Myfault";
+	WCHAR                   deviceLinkBuffer[]  = DOS_DEVICE_NAME;
 	UNICODE_STRING          deviceLinkUnicodeString;  
 	PDEVICE_OBJECT          interfaceDevice = NULL;
+
+	DbgPrint("Starting driver...");
 
 	// Create a named device object
 	RtlInitUnicodeString (&deviceNameUnicodeString, deviceNameBuffer );
