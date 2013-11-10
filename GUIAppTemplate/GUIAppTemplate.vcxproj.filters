@@ -32,10 +32,10 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="GUIAppTemplate.cpp">
+    <ClCompile Include="MainDlg.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="MainDlg.cpp">
+    <ClCompile Include="%24_____FILENAME_____.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

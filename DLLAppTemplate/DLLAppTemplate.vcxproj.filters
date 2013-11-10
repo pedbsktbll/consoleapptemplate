@@ -16,10 +16,10 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="DLLAppTemplate.cpp">
+    <ClCompile Include="dllmain.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="dllmain.cpp">
+    <ClCompile Include="%24_____FILENAME_____.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

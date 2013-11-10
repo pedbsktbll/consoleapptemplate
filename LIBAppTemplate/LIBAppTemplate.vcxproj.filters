@@ -16,12 +16,12 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="LIBAppTemplate.h">
+    <ClInclude Include="%24_____FILENAME_____.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="LIBAppTemplate.cpp">
+    <ClCompile Include="%24_____FILENAME_____.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

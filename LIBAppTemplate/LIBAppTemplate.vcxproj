@@ -154,10 +154,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="LIBAppTemplate.h" />
+    <ClInclude Include="%24_____FILENAME_____.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="LIBAppTemplate.cpp" />
+    <ClCompile Include="%24_____FILENAME_____.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
