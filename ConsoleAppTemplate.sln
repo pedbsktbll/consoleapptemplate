@@ -11,7 +11,7 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LIBAppTemplate", "LIBAppTem
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SYSAppTemplate", "SYSAppTemplate\SYSAppTemplate.vcxproj", "{BE731125-5F57-42F2-B8B4-42A0C78EBBA7}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WinApp", "WinApp\WinApp.vcxproj", "{15CEAE00-3E3A-4783-BA7A-57CC1AC5FF47}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WinAppTemplate", "WinAppTemplate\WinAppTemplate.vcxproj", "{15CEAE00-3E3A-4783-BA7A-57CC1AC5FF47}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
