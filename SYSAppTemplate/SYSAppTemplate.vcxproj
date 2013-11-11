@@ -137,8 +137,9 @@
     <ClCompile>
       <AdditionalIncludeDirectories>D:\Win7_Data\WinDDK\6001.18001\inc\ddk;D:\Win7_Data\WinDDK\6001.18001\inc\api;D:\Win7_Data\WinDDK\6001.18001\inc\crt;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
+    <Link />
     <Link>
-      <AdditionalLibraryDirectories>D:\Win7_Data\WinDDK\6001.18001\lib\w2k\i386;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>D:\Win7_Data\WinDDK\6001.18001\lib\wnet\amd64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release_Static|x64'">
@@ -146,7 +147,7 @@
       <AdditionalIncludeDirectories>D:\Win7_Data\WinDDK\6001.18001\inc\ddk;D:\Win7_Data\WinDDK\6001.18001\inc\api;D:\Win7_Data\WinDDK\6001.18001\inc\crt;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
-      <AdditionalLibraryDirectories>D:\Win7_Data\WinDDK\6001.18001\lib\w2k\i386;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>D:\Win7_Data\WinDDK\6001.18001\lib\wnet\amd64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release_Dynamic|x64'">
@@ -154,7 +155,7 @@
       <AdditionalIncludeDirectories>D:\Win7_Data\WinDDK\6001.18001\inc\ddk;D:\Win7_Data\WinDDK\6001.18001\inc\api;D:\Win7_Data\WinDDK\6001.18001\inc\crt;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
-      <AdditionalLibraryDirectories>D:\Win7_Data\WinDDK\6001.18001\lib\w2k\i386;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>D:\Win7_Data\WinDDK\6001.18001\lib\wnet\amd64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
