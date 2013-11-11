@@ -5,13 +5,13 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ConsoleAppTemplate", "Conso
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DLLAppTemplate", "DLLAppTemplate\DLLAppTemplate.vcxproj", "{396C61C4-9B92-41CE-91F0-8219CAE7D012}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GUIAppTemplate", "GUIAppTemplate\GUIAppTemplate.vcxproj", "{0CB6CCDE-AAEF-4F10-A85E-F66AACB8BB3F}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WTLAppTemplate", "WTLAppTemplate\WTLAppTemplate.vcxproj", "{0CB6CCDE-AAEF-4F10-A85E-F66AACB8BB3F}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LIBAppTemplate", "LIBAppTemplate\LIBAppTemplate.vcxproj", "{8D9DA1D5-0A8A-472D-9443-9EB05FDEEE10}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SYSAppTemplate", "SYSAppTemplate\SYSAppTemplate.vcxproj", "{BE731125-5F57-42F2-B8B4-42A0C78EBBA7}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WinAppTemplate", "WinAppTemplate\WinAppTemplate.vcxproj", "{15CEAE00-3E3A-4783-BA7A-57CC1AC5FF47}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WINAppTemplate", "WINAppTemplate\WINAppTemplate.vcxproj", "{15CEAE00-3E3A-4783-BA7A-57CC1AC5FF47}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
