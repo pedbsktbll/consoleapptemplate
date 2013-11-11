@@ -1,5 +1,12 @@
-// WinApp.cpp : Defines the entry point for the application.
-//
+/*
+ * Filename:		_____FILENAME_____.cpp
+ *
+ * Author:			_____USER_____
+ * Date Created:	_____DATE_____
+ * Version _____VERSION_____:		_____DATE_____ (_____USER_____)
+ *
+ * _____DESCRIPTION_____
+ */
 
 #define WIN32_LEAN_AND_MEAN             // Exclude rarely-used stuff from Windows headers
 #include <windows.h>
@@ -36,17 +43,15 @@ int APIENTRY wWinMain(HINSTANCE hInstance, HINSTANCE /*hPrevInstance*/, LPTSTR /
 	MyRegisterClass(hInstance);
 
 	// Perform application initialization:
-	if (!InitInstance (hInstance, nCmdShow))
-	{
-		return FALSE;
-	}
+	if( !InitInstance(hInstance, nCmdShow) )
+		return 0;
 
 	hAccelTable = LoadAccelerators(hInstance, MAKEINTRESOURCE(IDC_WINAPP));
 
 	// Main message loop:
-	while (GetMessage(&msg, NULL, 0, 0))
+	while( GetMessage(&msg, NULL, 0, 0) )
 	{
-		if (!TranslateAccelerator(msg.hwnd, hAccelTable, &msg))
+		if( !TranslateAccelerator(msg.hwnd, hAccelTable, &msg) )
 		{
 			TranslateMessage(&msg);
 			DispatchMessage(&msg);
@@ -55,8 +60,6 @@ int APIENTRY wWinMain(HINSTANCE hInstance, HINSTANCE /*hPrevInstance*/, LPTSTR /
 
 	return (int) msg.wParam;
 }
-
-
 
 //
 //  FUNCTION: MyRegisterClass()
@@ -104,21 +107,14 @@ ATOM MyRegisterClass(HINSTANCE hInstance)
 //
 BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 {
-   HWND hWnd;
-
    hInst = hInstance; // Store instance handle in our global variable
 
-   hWnd = CreateWindow(szWindowClass, szTitle, WS_OVERLAPPEDWINDOW,
-      CW_USEDEFAULT, 0, CW_USEDEFAULT, 0, NULL, NULL, hInstance, NULL);
-
+   HWND hWnd = CreateWindow(szWindowClass, szTitle, WS_OVERLAPPEDWINDOW, CW_USEDEFAULT, 0, CW_USEDEFAULT, 0, NULL, NULL, hInstance, NULL);
    if (!hWnd)
-   {
       return FALSE;
-   }
 
    ShowWindow(hWnd, nCmdShow);
    UpdateWindow(hWnd);
-
    return TRUE;
 }
 
@@ -138,54 +134,49 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 	PAINTSTRUCT ps;
 	HDC hdc;
 
-	switch (message)
+	switch( message )
 	{
-	case WM_COMMAND:
-		wmId    = LOWORD(wParam);
-		wmEvent = HIWORD(wParam);
-		// Parse the menu selections:
-		switch (wmId)
+		case WM_COMMAND:
 		{
-		case IDM_ABOUT:
-			DialogBox(hInst, MAKEINTRESOURCE(IDD_ABOUTBOX), hWnd, About);
+			wmId    = LOWORD(wParam);
+			wmEvent = HIWORD(wParam);
+		// Parse the menu selections:
+			switch( wmId )
+			{
+				case IDM_ABOUT: DialogBox(hInst, MAKEINTRESOURCE(IDD_ABOUTBOX), hWnd, About); break;
+				case IDM_EXIT: DestroyWindow(hWnd); break;
+				default: return DefWindowProc(hWnd, message, wParam, lParam);
+			}
 			break;
-		case IDM_EXIT:
-			DestroyWindow(hWnd);
-			break;
-		default:
-			return DefWindowProc(hWnd, message, wParam, lParam);
 		}
-		break;
-	case WM_PAINT:
-		hdc = BeginPaint(hWnd, &ps);
-		// TODO: Add any drawing code here...
-		EndPaint(hWnd, &ps);
-		break;
-	case WM_DESTROY:
-		PostQuitMessage(0);
-		break;
-	default:
-		return DefWindowProc(hWnd, message, wParam, lParam);
+		case WM_PAINT:
+		{
+			hdc = BeginPaint(hWnd, &ps);
+			// TODO: Add any drawing code here...
+			EndPaint(hWnd, &ps);
+			break;
+		}
+		case WM_DESTROY: PostQuitMessage(0); break;
+		default: return DefWindowProc(hWnd, message, wParam, lParam);
 	}
 	return 0;
 }
 
 // Message handler for about box.
-INT_PTR CALLBACK About(HWND hDlg, UINT message, WPARAM wParam, LPARAM lParam)
+INT_PTR CALLBACK About(HWND hDlg, UINT message, WPARAM wParam, LPARAM /*lParam*/)
 {
-	UNREFERENCED_PARAMETER(lParam);
 	switch (message)
 	{
-	case WM_INITDIALOG:
-		return (INT_PTR)TRUE;
-
-	case WM_COMMAND:
-		if (LOWORD(wParam) == IDOK || LOWORD(wParam) == IDCANCEL)
+		case WM_INITDIALOG: return (INT_PTR)TRUE;
+		case WM_COMMAND:
 		{
-			EndDialog(hDlg, LOWORD(wParam));
-			return (INT_PTR)TRUE;
+			if( LOWORD(wParam) == IDOK || LOWORD(wParam) == IDCANCEL )
+			{
+				EndDialog(hDlg, LOWORD(wParam));
+				return (INT_PTR)TRUE;
+			}
+			break;
 		}
-		break;
 	}
 	return (INT_PTR)FALSE;
 }
