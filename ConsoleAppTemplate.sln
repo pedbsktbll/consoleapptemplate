@@ -11,6 +11,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LIBAppTemplate", "LIBAppTem
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SYSAppTemplate", "SYSAppTemplate\SYSAppTemplate.vcxproj", "{BE731125-5F57-42F2-B8B4-42A0C78EBBA7}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WinApp", "WinApp\WinApp.vcxproj", "{15CEAE00-3E3A-4783-BA7A-57CC1AC5FF47}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -81,6 +83,24 @@ Global
 		{BE731125-5F57-42F2-B8B4-42A0C78EBBA7}.Release_Static|Win32.Build.0 = Release_Static|Win32
 		{BE731125-5F57-42F2-B8B4-42A0C78EBBA7}.Release_Static|x64.ActiveCfg = Release_Static|x64
 		{BE731125-5F57-42F2-B8B4-42A0C78EBBA7}.Release_Static|x64.Build.0 = Release_Static|x64
+		{BE731125-5F57-42F2-B8B4-42A0C78EBBA7}.Release|Win32.ActiveCfg = Release_Dynamic|x64
+		{BE731125-5F57-42F2-B8B4-42A0C78EBBA7}.Release|x64.ActiveCfg = Release_Dynamic|x64
+		{BE731125-5F57-42F2-B8B4-42A0C78EBBA7}.Release|x64.Build.0 = Release_Dynamic|x64
+		{15CEAE00-3E3A-4783-BA7A-57CC1AC5FF47}.Debug|Win32.ActiveCfg = Debug|Win32
+		{15CEAE00-3E3A-4783-BA7A-57CC1AC5FF47}.Debug|Win32.Build.0 = Debug|Win32
+		{15CEAE00-3E3A-4783-BA7A-57CC1AC5FF47}.Debug|x64.ActiveCfg = Debug|x64
+		{15CEAE00-3E3A-4783-BA7A-57CC1AC5FF47}.Debug|x64.Build.0 = Debug|x64
+		{15CEAE00-3E3A-4783-BA7A-57CC1AC5FF47}.Release_Dynamic|Win32.ActiveCfg = Release_Dynamic|Win32
+		{15CEAE00-3E3A-4783-BA7A-57CC1AC5FF47}.Release_Dynamic|Win32.Build.0 = Release_Dynamic|Win32
+		{15CEAE00-3E3A-4783-BA7A-57CC1AC5FF47}.Release_Dynamic|x64.ActiveCfg = Release_Dynamic|x64
+		{15CEAE00-3E3A-4783-BA7A-57CC1AC5FF47}.Release_Dynamic|x64.Build.0 = Release_Dynamic|x64
+		{15CEAE00-3E3A-4783-BA7A-57CC1AC5FF47}.Release_Static|Win32.ActiveCfg = Release_Static|Win32
+		{15CEAE00-3E3A-4783-BA7A-57CC1AC5FF47}.Release_Static|Win32.Build.0 = Release_Static|Win32
+		{15CEAE00-3E3A-4783-BA7A-57CC1AC5FF47}.Release_Static|x64.ActiveCfg = Release_Static|x64
+		{15CEAE00-3E3A-4783-BA7A-57CC1AC5FF47}.Release_Static|x64.Build.0 = Release_Static|x64
+		{15CEAE00-3E3A-4783-BA7A-57CC1AC5FF47}.Release|Win32.ActiveCfg = Release_Dynamic|x64
+		{15CEAE00-3E3A-4783-BA7A-57CC1AC5FF47}.Release|x64.ActiveCfg = Release_Dynamic|x64
+		{15CEAE00-3E3A-4783-BA7A-57CC1AC5FF47}.Release|x64.Build.0 = Release_Dynamic|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
