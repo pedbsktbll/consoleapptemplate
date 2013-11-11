@@ -5,6 +5,9 @@
     <Import Project="internal\Kernel_x86.props" />
     <Import Project="internal\Debug.props" />
   </ImportGroup>
+  <PropertyGroup>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
   <ItemDefinitionGroup>
     <ClCompile>
       <StringPooling>true</StringPooling>

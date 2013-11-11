@@ -114,53 +114,50 @@
       <AdditionalIncludeDirectories>D:\Win7_Data\WinDDK\6001.18001\inc\ddk;D:\Win7_Data\WinDDK\6001.18001\inc\api;D:\Win7_Data\WinDDK\6001.18001\inc\crt;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
-    </Link>
-    <Link>
       <AdditionalLibraryDirectories>D:\Win7_Data\WinDDK\6001.18001\lib\w2k\i386;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release_Dynamic|Win32'">
-    <ClCompile />
-    <Link>
-    </Link>
     <ClCompile>
-      <PreprocessorDefinitions>
-      </PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\Win7_Data\WinDDK\6001.18001\inc\ddk;D:\Win7_Data\WinDDK\6001.18001\inc\api;D:\Win7_Data\WinDDK\6001.18001\inc\crt;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>D:\Win7_Data\WinDDK\6001.18001\lib\w2k\i386;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release_Static|Win32'">
-    <ClCompile />
-    <Link>
-    </Link>
     <ClCompile>
-      <PreprocessorDefinitions>
-      </PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\Win7_Data\WinDDK\6001.18001\inc\ddk;D:\Win7_Data\WinDDK\6001.18001\inc\api;D:\Win7_Data\WinDDK\6001.18001\inc\crt;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>D:\Win7_Data\WinDDK\6001.18001\lib\w2k\i386;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <PreprocessorDefinitions>WIN32;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\Win7_Data\WinDDK\6001.18001\inc\ddk;D:\Win7_Data\WinDDK\6001.18001\inc\api;D:\Win7_Data\WinDDK\6001.18001\inc\crt;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
+      <AdditionalLibraryDirectories>D:\Win7_Data\WinDDK\6001.18001\lib\w2k\i386;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release_Static|x64'">
     <ClCompile>
-      <PreprocessorDefinitions>WIN32;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\Win7_Data\WinDDK\6001.18001\inc\ddk;D:\Win7_Data\WinDDK\6001.18001\inc\api;D:\Win7_Data\WinDDK\6001.18001\inc\crt;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
+      <AdditionalLibraryDirectories>D:\Win7_Data\WinDDK\6001.18001\lib\w2k\i386;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release_Dynamic|x64'">
     <ClCompile>
-      <PreprocessorDefinitions>WIN32;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>D:\Win7_Data\WinDDK\6001.18001\inc\ddk;D:\Win7_Data\WinDDK\6001.18001\inc\api;D:\Win7_Data\WinDDK\6001.18001\inc\crt;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
+      <AdditionalLibraryDirectories>D:\Win7_Data\WinDDK\6001.18001\lib\w2k\i386;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="ioctlcmd.h" />
-    <ClInclude Include="myFault.h" />
     <ClInclude Include="_____FILENAME_____.h" />
   </ItemGroup>
   <ItemGroup>

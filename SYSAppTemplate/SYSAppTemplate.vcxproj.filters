@@ -16,12 +16,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ioctlcmd.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="myFault.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="_____FILENAME_____.h">
       <Filter>Header Files</Filter>
     </ClInclude>

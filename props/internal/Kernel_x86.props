@@ -10,7 +10,6 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>sehupd.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(DDKBASE-6001_18001)\lib\w2k\i386;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <MinimumRequiredVersion>5.0</MinimumRequiredVersion>
       <TargetMachine>MachineX86</TargetMachine>
     </Link>
