@@ -4,3 +4,6 @@
 [submodule "Submodules/dynamic_libs"]
 	path = Submodules/dynamic_libs
 	url = git@bitbucket.org:pedbsktbll/dynamic_libs.git
+[submodule "Submodules/kernel_libs"]
+	path = Submodules/kernel_libs
+	url = git@bitbucket.org:pedbsktbll/kernel_libs.git
