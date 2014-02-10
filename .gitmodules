@@ -1,0 +1,6 @@
+[submodule "Submodules/wtl"]
+	path = Submodules/wtl
+	url = git@bitbucket.org:pedbsktbll/wtl.git
+[submodule "Submodules/dynamic_libs"]
+	path = Submodules/dynamic_libs
+	url = git@bitbucket.org:pedbsktbll/dynamic_libs.git
