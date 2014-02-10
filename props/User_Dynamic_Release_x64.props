@@ -7,7 +7,10 @@
   </ImportGroup>
   <ItemDefinitionGroup>
     <ClCompile>
-      <AdditionalIncludeDirectories>$(Subs)Dynamic_Libs\inc\api;$(Subs)Dynamic_Libs\inc\crt;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(Subs)Dynamic_Libs\inc\api;$(Subs)Dynamic_Libs\inc\crt;$(Subs)Dynamic_Libs\inc\crt\atl71;$(Subs)Dynamic_Libs\inc\ddk;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <Optimization>MinSpace</Optimization>
+      <FavorSizeOrSpeed>Size</FavorSizeOrSpeed>
+      <IgnoreStandardIncludePath>true</IgnoreStandardIncludePath>
     </ClCompile>
     <Link>
       <AdditionalLibraryDirectories>$(Subs)\Dynamic_Libs\amd64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
